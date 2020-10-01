@@ -1,26 +1,49 @@
 # TO-DO: Complete the selection_sort() function below
+#-----0-1--2--3--4
+#arr [1-10-22-50-20]
 def selection_sort(arr):
     # loop through n-1 elements
+    n = len(arr)
     for i in range(0, len(arr) - 1):
-        cur_index = i
+        cur_index = i 
         smallest_index = cur_index
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc)
         # Your code here
-
-
+        for j in range(i + 1,  n):
+          if(arr[j] < arr[smallest_index]):
+            #update if smaller is found
+            smallest_index = j
+                 
         # TO-DO: swap
         # Your code here
+        temp = arr[i]
+        arr[cur_index] = arr[smallest_index]
+        arr[smallest_index] = temp
 
     return arr
 
 
 # TO-DO:  implement the Bubble Sort function below
+# 10, 5, 14, 99, 3 ,2
 def bubble_sort(arr):
     # Your code here
-
-
+    #loop thru the array
+    sorting = True
+    while sorting:
+      sorting = False
+      for i in range(0, len(arr) - 1 ):
+        #each time I loop thru it compare pointer to value next to it
+        if arr[i] > arr[i+1]:
+        #if the value is biggger than the value to my right, swap position
+          temp = arr[i + 1]
+          arr[i + 1] = arr[i]
+          arr[i] = temp
+          sorting = True
+        #keep looping until no more swaps are done
+    
     return arr
+    
 
 '''
 STRETCH: implement the Counting Sort function below
